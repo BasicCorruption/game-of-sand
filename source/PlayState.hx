@@ -29,7 +29,8 @@ class PlayState extends FlxState
 		{
 			if (FlxG.mouse.pressed)
 			{
-				add(dot(FlxColor.BLUE, FlxG.mouse.x, FlxG.mouse.y));
+				var d = dot(FlxColor.BLUE, FlxG.mouse.x, FlxG.mouse.y);
+				add(d);
 			}
 		}
 	}
