@@ -10,15 +10,19 @@ class PlayState extends FlxState
 {
 	var sandbox:FlxSprite;
 	var mtsl:Materials = WALL;
+	var cursor:FlxSprite;
 
 	override public function create()
 	{
 		super.create();
 
 		sandbox = new FlxSprite();
-		sandbox.makeGraphic(720, 540, FlxColor.WHITE);
+		sandbox.makeGraphic(1280, 720, FlxColor.WHITE);
 		sandbox.screenCenter(X);
 		add(sandbox);
+
+		cursor = new FlxSprite();
+		cursor.makeGraphic(4, 4, FlxColor.RED);
 	}
 
 	override public function update(elapsed:Float)
@@ -29,7 +33,7 @@ class PlayState extends FlxState
 		{
 			if (FlxG.mouse.pressed)
 			{
-				var d = dot(FlxColor.BLUE, FlxG.mouse.x, FlxG.mouse.y);
+				var d = dot(FlxColor.BLACK, FlxG.mouse.x, FlxG.mouse.y);
 				add(d);
 			}
 		}
